@@ -25,13 +25,44 @@ export default function ReviewCode({
     }
   }, [monaco, selectedLanguage]);
 
+  const postRequest = async () => {
+    //👇🏻 disables button after a single click
+    setDisableBtn(true);
+    //👇🏻 sends a request
+    const response = await fetch("/api/generate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ context, language: selectedLanguage }),
+    });
+  
+    //👇🏻 returns a response
+    const data = await response.json();
+  
+    //👇🏻 displays the response
+    if (data.data) {
+      setResultContent({
+        code: data.data.code,
+        explanation: data.data.explanation,
+        language: selectedLanguage,
+      });
+      setToggleView("result");
+    } else {
+      alert("An error occurred. Please try again");
+    }
+    setDisableBtn(false);
+    setContext("");
+    setSelectedLanguage("");
+  };
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!selectedLanguage || !context.trim() || !codeSnippet.trim()) {
       alert("Please provide a context and code snippet to review");
       return;
     }
-    // 👉🏻 send data to the backend
+    postRequest();
   };
 
   return (
@@ -86,5 +117,6 @@ export default function ReviewCode({
       </form>
     </main>
   );
+  
   
 }
