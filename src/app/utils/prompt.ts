@@ -1,7 +1,7 @@
 const JsonResult = {
-    code: "Code goes here",
-    explanation: "# Explanation goes here",
-  };
+  code: "Code goes here",
+  explanation: "# Explanation goes here",
+};
   
   export const generateCodePrompt = (
     userPrompt: string,
@@ -18,10 +18,14 @@ const JsonResult = {
       ${JSON.stringify(JsonResult)}
   
       The user's request is:
-      userPromptusing{language} programming language. Please use the format as stated above to generate the code and explanation that solves the user's problem in the selected programming language.
+      userPromptusing ${language} programming language. Please use the format as stated above to generate the code and explanation that solves the user's problem in the selected programming language.
       Please ensure your result is a JSON object containing the code and explanation as object keys in the format stated above. `;
   
-    return aiPrompt;
+    return JSON.stringify(
+    {
+      type: "text",
+      text: aiPrompt
+    } );
   };
 
   export const reviewCodePrompt = (
