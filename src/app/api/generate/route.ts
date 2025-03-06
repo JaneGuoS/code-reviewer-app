@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     //👇🏻 generate code using the prompt
     const response = await client.chat.completions.create({
       temperature: 0.3,
-      max_tokens: 512,
+      max_tokens: 2098,
       top_p: 0.95,
       model: "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
       messages: [
@@ -32,8 +32,9 @@ export async function POST(req: NextRequest) {
       //👇🏻 gets the response
       const response = completion.message.content;
       //👇🏻 returns the JSON object
-      const jsonMatch = response.match(/\{(.|\n)*\}/);
-      const jsonObject = jsonMatch ? JSON.parse(jsonMatch[0]) : null;
+      //const jsonMatch = response.match(/\{(.|\n)*\}/);
+      //const jsonObject = jsonMatch ? JSON.parse(jsonMatch[0]) : null;
+      const jsonObject = JSON.parse(response);
       return NextResponse.json(
         { message: "Code generated successfully", data: jsonObject },
         { status: 200 }

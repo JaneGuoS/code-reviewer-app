@@ -18,7 +18,7 @@ const JsonResult = {
       ${JSON.stringify(JsonResult)}
   
       The user's request is:
-      userPromptusing ${language} programming language. Please use the format as stated above to generate the code and explanation that solves the user's problem in the selected programming language.
+      ${userPrompt} using ${language} programming language. Please use the format as stated above to generate the code and explanation that solves the user's problem in the selected programming language.
       Please ensure your result is a JSON object containing the code and explanation as object keys in the format stated above. `;
   
     return JSON.stringify(
