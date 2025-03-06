@@ -22,8 +22,9 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Sample
 Input the prompt
-
+![alt text](image-1.png)
 Generate the result
+![alt text](image.png)
 
 ## Learn More
 
