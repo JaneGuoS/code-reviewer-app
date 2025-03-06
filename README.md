@@ -22,11 +22,11 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Sample
 Input the prompt
-![Image 2025-3-6 at 16 28](https://github.com/user-attachments/assets/89e6d159-abc5-469c-a4f6-aff33d97f109)
+
 ![image](https://github.com/user-attachments/assets/9843e529-373f-495c-a6f3-c7446b4a38c9)
 
 Generate the result
-![alt text](image.jpeg)
+![Image 2025-3-6 at 16 28](https://github.com/user-attachments/assets/89e6d159-abc5-469c-a4f6-aff33d97f109)
 
 ## Learn More
 
