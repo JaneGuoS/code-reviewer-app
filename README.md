@@ -21,10 +21,13 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Sample
-Input the prompt
-![alt text](image-1.jpeg)
-Generate the result
-![alt text](image.jpeg)
+__Input the prompt__
+
+![image](https://github.com/user-attachments/assets/9843e529-373f-495c-a6f3-c7446b4a38c9)
+
+__Generate the result__
+
+![Image 2025-3-6 at 16 28](https://github.com/user-attachments/assets/89e6d159-abc5-469c-a4f6-aff33d97f109)
 
 ## Learn More
 
